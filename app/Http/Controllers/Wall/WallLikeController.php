@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Wall;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreWallLikeRequest;
 use App\Http\Requests\UpdateWallLikeRequest;
 use App\Models\WallLike;

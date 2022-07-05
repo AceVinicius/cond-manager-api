@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Cond;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDocumentsRequest;
 use App\Http\Requests\UpdateDocumentsRequest;
 use App\Models\Documents;

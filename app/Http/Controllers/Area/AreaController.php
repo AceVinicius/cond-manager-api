@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Area;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAreaRequest;
 use App\Http\Requests\UpdateAreaRequest;
 use App\Models\Area;

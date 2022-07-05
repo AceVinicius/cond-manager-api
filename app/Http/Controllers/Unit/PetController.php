@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Unit;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePetRequest;
 use App\Http\Requests\UpdatePetRequest;
 use App\Models\Pet;

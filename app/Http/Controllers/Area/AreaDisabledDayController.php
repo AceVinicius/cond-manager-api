@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Area;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAreaDisabledDayRequest;
 use App\Http\Requests\UpdateAreaDisabledDayRequest;
 use App\Models\AreaDisabledDay;

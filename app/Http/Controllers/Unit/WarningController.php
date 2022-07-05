@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Unit;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreWarningRequest;
 use App\Http\Requests\UpdateWarningRequest;
 use App\Models\Warning;

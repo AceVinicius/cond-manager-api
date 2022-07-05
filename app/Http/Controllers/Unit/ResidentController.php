@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Unit;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreResidentRequest;
 use App\Http\Requests\UpdateResidentRequest;
 use App\Models\Resident;

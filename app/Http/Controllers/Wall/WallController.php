@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Wall;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreWallRequest;
 use App\Http\Requests\UpdateWallRequest;
 use App\Models\Wall;
