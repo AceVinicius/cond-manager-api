@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cond;
 
-use App\Http\Requests\StorePetRequest;
-use App\Http\Requests\UpdatePetRequest;
-use App\Models\Pet;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+use App\Models\User;
 
-class PetController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class PetController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePetRequest  $request
+     * @param  \App\Http\Requests\StoreUserRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePetRequest $request)
+    public function store(StoreUserRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class PetController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Pet  $pet
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Pet $pet)
+    public function show(User $user)
     {
         //
     }
@@ -53,10 +53,10 @@ class PetController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Pet  $pet
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pet $pet)
+    public function edit(User $user)
     {
         //
     }
@@ -64,11 +64,11 @@ class PetController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePetRequest  $request
-     * @param  \App\Models\Pet  $pet
+     * @param  \App\Http\Requests\UpdateUserRequest  $request
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePetRequest $request, Pet $pet)
+    public function update(UpdateUserRequest $request, User $user)
     {
         //
     }
@@ -76,10 +76,10 @@ class PetController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Pet  $pet
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pet $pet)
+    public function destroy(User $user)
     {
         //
     }

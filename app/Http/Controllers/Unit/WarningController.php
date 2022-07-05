@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Unit;
 
-use App\Http\Requests\StoreDocumentsRequest;
-use App\Http\Requests\UpdateDocumentsRequest;
-use App\Models\Documents;
+use App\Http\Requests\StoreWarningRequest;
+use App\Http\Requests\UpdateWarningRequest;
+use App\Models\Warning;
 
-class DocumentsController extends Controller
+class WarningController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class DocumentsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDocumentsRequest  $request
+     * @param  \App\Http\Requests\StoreWarningRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDocumentsRequest $request)
+    public function store(StoreWarningRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class DocumentsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Documents  $documents
+     * @param  \App\Models\Warning  $warning
      * @return \Illuminate\Http\Response
      */
-    public function show(Documents $documents)
+    public function show(Warning $warning)
     {
         //
     }
@@ -53,10 +53,10 @@ class DocumentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Documents  $documents
+     * @param  \App\Models\Warning  $warning
      * @return \Illuminate\Http\Response
      */
-    public function edit(Documents $documents)
+    public function edit(Warning $warning)
     {
         //
     }
@@ -64,11 +64,11 @@ class DocumentsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateDocumentsRequest  $request
-     * @param  \App\Models\Documents  $documents
+     * @param  \App\Http\Requests\UpdateWarningRequest  $request
+     * @param  \App\Models\Warning  $warning
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDocumentsRequest $request, Documents $documents)
+    public function update(UpdateWarningRequest $request, Warning $warning)
     {
         //
     }
@@ -76,10 +76,10 @@ class DocumentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Documents  $documents
+     * @param  \App\Models\Warning  $warning
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Documents $documents)
+    public function destroy(Warning $warning)
     {
         //
     }

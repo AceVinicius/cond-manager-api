@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cond;
 
-use App\Http\Requests\StoreLostNFoundRequest;
-use App\Http\Requests\UpdateLostNFoundRequest;
-use App\Models\LostNFound;
+use App\Http\Requests\StoreDocumentsRequest;
+use App\Http\Requests\UpdateDocumentsRequest;
+use App\Models\Documents;
 
-class LostNFoundController extends Controller
+class DocumentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class LostNFoundController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreLostNFoundRequest  $request
+     * @param  \App\Http\Requests\StoreDocumentsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreLostNFoundRequest $request)
+    public function store(StoreDocumentsRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class LostNFoundController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LostNFound  $lostNFound
+     * @param  \App\Models\Documents  $documents
      * @return \Illuminate\Http\Response
      */
-    public function show(LostNFound $lostNFound)
+    public function show(Documents $documents)
     {
         //
     }
@@ -53,10 +53,10 @@ class LostNFoundController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LostNFound  $lostNFound
+     * @param  \App\Models\Documents  $documents
      * @return \Illuminate\Http\Response
      */
-    public function edit(LostNFound $lostNFound)
+    public function edit(Documents $documents)
     {
         //
     }
@@ -64,11 +64,11 @@ class LostNFoundController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateLostNFoundRequest  $request
-     * @param  \App\Models\LostNFound  $lostNFound
+     * @param  \App\Http\Requests\UpdateDocumentsRequest  $request
+     * @param  \App\Models\Documents  $documents
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateLostNFoundRequest $request, LostNFound $lostNFound)
+    public function update(UpdateDocumentsRequest $request, Documents $documents)
     {
         //
     }
@@ -76,10 +76,10 @@ class LostNFoundController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LostNFound  $lostNFound
+     * @param  \App\Models\Documents  $documents
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LostNFound $lostNFound)
+    public function destroy(Documents $documents)
     {
         //
     }

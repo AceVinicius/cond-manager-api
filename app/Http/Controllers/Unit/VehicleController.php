@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Unit;
 
-use App\Http\Requests\StoreReservationRequest;
-use App\Http\Requests\UpdateReservationRequest;
-use App\Models\Reservation;
+use App\Http\Requests\StoreVehicleRequest;
+use App\Http\Requests\UpdateVehicleRequest;
+use App\Models\Vehicle;
 
-class ReservationController extends Controller
+class VehicleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class ReservationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreReservationRequest  $request
+     * @param  \App\Http\Requests\StoreVehicleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreReservationRequest $request)
+    public function store(StoreVehicleRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class ReservationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show(Reservation $reservation)
+    public function show(Vehicle $vehicle)
     {
         //
     }
@@ -53,10 +53,10 @@ class ReservationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reservation $reservation)
+    public function edit(Vehicle $vehicle)
     {
         //
     }
@@ -64,11 +64,11 @@ class ReservationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateReservationRequest  $request
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Http\Requests\UpdateVehicleRequest  $request
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateReservationRequest $request, Reservation $reservation)
+    public function update(UpdateVehicleRequest $request, Vehicle $vehicle)
     {
         //
     }
@@ -76,10 +76,10 @@ class ReservationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Reservation  $reservation
+     * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $reservation)
+    public function destroy(Vehicle $vehicle)
     {
         //
     }

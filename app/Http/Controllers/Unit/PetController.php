@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Unit;
 
-use App\Http\Requests\StoreAreaDisabledDayRequest;
-use App\Http\Requests\UpdateAreaDisabledDayRequest;
-use App\Models\AreaDisabledDay;
+use App\Http\Requests\StorePetRequest;
+use App\Http\Requests\UpdatePetRequest;
+use App\Models\Pet;
 
-class AreaDisabledDayController extends Controller
+class PetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class AreaDisabledDayController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAreaDisabledDayRequest  $request
+     * @param  \App\Http\Requests\StorePetRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAreaDisabledDayRequest $request)
+    public function store(StorePetRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class AreaDisabledDayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AreaDisabledDay  $areaDisabledDay
+     * @param  \App\Models\Pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function show(AreaDisabledDay $areaDisabledDay)
+    public function show(Pet $pet)
     {
         //
     }
@@ -53,10 +53,10 @@ class AreaDisabledDayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AreaDisabledDay  $areaDisabledDay
+     * @param  \App\Models\Pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function edit(AreaDisabledDay $areaDisabledDay)
+    public function edit(Pet $pet)
     {
         //
     }
@@ -64,11 +64,11 @@ class AreaDisabledDayController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAreaDisabledDayRequest  $request
-     * @param  \App\Models\AreaDisabledDay  $areaDisabledDay
+     * @param  \App\Http\Requests\UpdatePetRequest  $request
+     * @param  \App\Models\Pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAreaDisabledDayRequest $request, AreaDisabledDay $areaDisabledDay)
+    public function update(UpdatePetRequest $request, Pet $pet)
     {
         //
     }
@@ -76,10 +76,10 @@ class AreaDisabledDayController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AreaDisabledDay  $areaDisabledDay
+     * @param  \App\Models\Pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AreaDisabledDay $areaDisabledDay)
+    public function destroy(Pet $pet)
     {
         //
     }

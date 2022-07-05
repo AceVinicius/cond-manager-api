@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Wall;
 
-use App\Http\Requests\StoreUnitRequest;
-use App\Http\Requests\UpdateUnitRequest;
-use App\Models\Unit;
+use App\Http\Requests\StoreWallRequest;
+use App\Http\Requests\UpdateWallRequest;
+use App\Models\Wall;
 
-class UnitController extends Controller
+class WallController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class UnitController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreUnitRequest  $request
+     * @param  \App\Http\Requests\StoreWallRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreUnitRequest $request)
+    public function store(StoreWallRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class UnitController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Unit  $unit
+     * @param  \App\Models\Wall  $wall
      * @return \Illuminate\Http\Response
      */
-    public function show(Unit $unit)
+    public function show(Wall $wall)
     {
         //
     }
@@ -53,10 +53,10 @@ class UnitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Unit  $unit
+     * @param  \App\Models\Wall  $wall
      * @return \Illuminate\Http\Response
      */
-    public function edit(Unit $unit)
+    public function edit(Wall $wall)
     {
         //
     }
@@ -64,11 +64,11 @@ class UnitController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateUnitRequest  $request
-     * @param  \App\Models\Unit  $unit
+     * @param  \App\Http\Requests\UpdateWallRequest  $request
+     * @param  \App\Models\Wall  $wall
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUnitRequest $request, Unit $unit)
+    public function update(UpdateWallRequest $request, Wall $wall)
     {
         //
     }
@@ -76,10 +76,10 @@ class UnitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Unit  $unit
+     * @param  \App\Models\Wall  $wall
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Unit $unit)
+    public function destroy(Wall $wall)
     {
         //
     }

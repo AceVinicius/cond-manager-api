@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cond;
 
-use App\Http\Requests\StoreWallRequest;
-use App\Http\Requests\UpdateWallRequest;
-use App\Models\Wall;
+use App\Http\Requests\StoreLostNFoundRequest;
+use App\Http\Requests\UpdateLostNFoundRequest;
+use App\Models\LostNFound;
 
-class WallController extends Controller
+class LostNFoundController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class WallController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreWallRequest  $request
+     * @param  \App\Http\Requests\StoreLostNFoundRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreWallRequest $request)
+    public function store(StoreLostNFoundRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class WallController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Wall  $wall
+     * @param  \App\Models\LostNFound  $lostNFound
      * @return \Illuminate\Http\Response
      */
-    public function show(Wall $wall)
+    public function show(LostNFound $lostNFound)
     {
         //
     }
@@ -53,10 +53,10 @@ class WallController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Wall  $wall
+     * @param  \App\Models\LostNFound  $lostNFound
      * @return \Illuminate\Http\Response
      */
-    public function edit(Wall $wall)
+    public function edit(LostNFound $lostNFound)
     {
         //
     }
@@ -64,11 +64,11 @@ class WallController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateWallRequest  $request
-     * @param  \App\Models\Wall  $wall
+     * @param  \App\Http\Requests\UpdateLostNFoundRequest  $request
+     * @param  \App\Models\LostNFound  $lostNFound
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWallRequest $request, Wall $wall)
+    public function update(UpdateLostNFoundRequest $request, LostNFound $lostNFound)
     {
         //
     }
@@ -76,10 +76,10 @@ class WallController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Wall  $wall
+     * @param  \App\Models\LostNFound  $lostNFound
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wall $wall)
+    public function destroy(LostNFound $lostNFound)
     {
         //
     }

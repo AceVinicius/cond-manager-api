@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Wall;
 
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use App\Models\User;
+use App\Http\Requests\StoreWallLikeRequest;
+use App\Http\Requests\UpdateWallLikeRequest;
+use App\Models\WallLike;
 
-class UserController extends Controller
+class WallLikeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreUserRequest  $request
+     * @param  \App\Http\Requests\StoreWallLikeRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreUserRequest $request)
+    public function store(StoreWallLikeRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\WallLike  $wallLike
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(WallLike $wallLike)
     {
         //
     }
@@ -53,10 +53,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\WallLike  $wallLike
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(WallLike $wallLike)
     {
         //
     }
@@ -64,11 +64,11 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateUserRequest  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Http\Requests\UpdateWallLikeRequest  $request
+     * @param  \App\Models\WallLike  $wallLike
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(UpdateWallLikeRequest $request, WallLike $wallLike)
     {
         //
     }
@@ -76,10 +76,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\WallLike  $wallLike
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(WallLike $wallLike)
     {
         //
     }

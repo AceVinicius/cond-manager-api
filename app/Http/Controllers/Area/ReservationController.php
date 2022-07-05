@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Area;
 
-use App\Http\Requests\StoreAreaRequest;
-use App\Http\Requests\UpdateAreaRequest;
-use App\Models\Area;
+use App\Http\Requests\StoreReservationRequest;
+use App\Http\Requests\UpdateReservationRequest;
+use App\Models\Reservation;
 
-class AreaController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class AreaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAreaRequest  $request
+     * @param  \App\Http\Requests\StoreReservationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAreaRequest $request)
+    public function store(StoreReservationRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class AreaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Area $area)
+    public function show(Reservation $reservation)
     {
         //
     }
@@ -53,10 +53,10 @@ class AreaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Area $area)
+    public function edit(Reservation $reservation)
     {
         //
     }
@@ -64,11 +64,11 @@ class AreaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAreaRequest  $request
-     * @param  \App\Models\Area  $area
+     * @param  \App\Http\Requests\UpdateReservationRequest  $request
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAreaRequest $request, Area $area)
+    public function update(UpdateReservationRequest $request, Reservation $reservation)
     {
         //
     }
@@ -76,10 +76,10 @@ class AreaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Area  $area
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Area $area)
+    public function destroy(Reservation $reservation)
     {
         //
     }

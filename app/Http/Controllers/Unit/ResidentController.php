@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Unit;
 
-use App\Http\Requests\StoreBilletsRequest;
-use App\Http\Requests\UpdateBilletsRequest;
-use App\Models\Billets;
+use App\Http\Requests\StoreResidentRequest;
+use App\Http\Requests\UpdateResidentRequest;
+use App\Models\Resident;
 
-class BilletsController extends Controller
+class ResidentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class BilletsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBilletsRequest  $request
+     * @param  \App\Http\Requests\StoreResidentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBilletsRequest $request)
+    public function store(StoreResidentRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class BilletsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Billets  $billets
+     * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function show(Billets $billets)
+    public function show(Resident $resident)
     {
         //
     }
@@ -53,10 +53,10 @@ class BilletsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Billets  $billets
+     * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function edit(Billets $billets)
+    public function edit(Resident $resident)
     {
         //
     }
@@ -64,11 +64,11 @@ class BilletsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBilletsRequest  $request
-     * @param  \App\Models\Billets  $billets
+     * @param  \App\Http\Requests\UpdateResidentRequest  $request
+     * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBilletsRequest $request, Billets $billets)
+    public function update(UpdateResidentRequest $request, Resident $resident)
     {
         //
     }
@@ -76,10 +76,10 @@ class BilletsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Billets  $billets
+     * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Billets $billets)
+    public function destroy(Resident $resident)
     {
         //
     }

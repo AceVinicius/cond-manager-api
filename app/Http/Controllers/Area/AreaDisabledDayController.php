@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Area;
 
-use App\Http\Requests\StoreWarningRequest;
-use App\Http\Requests\UpdateWarningRequest;
-use App\Models\Warning;
+use App\Http\Requests\StoreAreaDisabledDayRequest;
+use App\Http\Requests\UpdateAreaDisabledDayRequest;
+use App\Models\AreaDisabledDay;
 
-class WarningController extends Controller
+class AreaDisabledDayController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class WarningController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreWarningRequest  $request
+     * @param  \App\Http\Requests\StoreAreaDisabledDayRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreWarningRequest $request)
+    public function store(StoreAreaDisabledDayRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class WarningController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Warning  $warning
+     * @param  \App\Models\AreaDisabledDay  $areaDisabledDay
      * @return \Illuminate\Http\Response
      */
-    public function show(Warning $warning)
+    public function show(AreaDisabledDay $areaDisabledDay)
     {
         //
     }
@@ -53,10 +53,10 @@ class WarningController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Warning  $warning
+     * @param  \App\Models\AreaDisabledDay  $areaDisabledDay
      * @return \Illuminate\Http\Response
      */
-    public function edit(Warning $warning)
+    public function edit(AreaDisabledDay $areaDisabledDay)
     {
         //
     }
@@ -64,11 +64,11 @@ class WarningController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateWarningRequest  $request
-     * @param  \App\Models\Warning  $warning
+     * @param  \App\Http\Requests\UpdateAreaDisabledDayRequest  $request
+     * @param  \App\Models\AreaDisabledDay  $areaDisabledDay
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWarningRequest $request, Warning $warning)
+    public function update(UpdateAreaDisabledDayRequest $request, AreaDisabledDay $areaDisabledDay)
     {
         //
     }
@@ -76,10 +76,10 @@ class WarningController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Warning  $warning
+     * @param  \App\Models\AreaDisabledDay  $areaDisabledDay
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Warning $warning)
+    public function destroy(AreaDisabledDay $areaDisabledDay)
     {
         //
     }

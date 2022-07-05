@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Unit;
 
-use App\Http\Requests\StoreWallLikeRequest;
-use App\Http\Requests\UpdateWallLikeRequest;
-use App\Models\WallLike;
+use App\Http\Requests\StoreUnitRequest;
+use App\Http\Requests\UpdateUnitRequest;
+use App\Models\Unit;
 
-class WallLikeController extends Controller
+class UnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class WallLikeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreWallLikeRequest  $request
+     * @param  \App\Http\Requests\StoreUnitRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreWallLikeRequest $request)
+    public function store(StoreUnitRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class WallLikeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\WallLike  $wallLike
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function show(WallLike $wallLike)
+    public function show(Unit $unit)
     {
         //
     }
@@ -53,10 +53,10 @@ class WallLikeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\WallLike  $wallLike
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function edit(WallLike $wallLike)
+    public function edit(Unit $unit)
     {
         //
     }
@@ -64,11 +64,11 @@ class WallLikeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateWallLikeRequest  $request
-     * @param  \App\Models\WallLike  $wallLike
+     * @param  \App\Http\Requests\UpdateUnitRequest  $request
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWallLikeRequest $request, WallLike $wallLike)
+    public function update(UpdateUnitRequest $request, Unit $unit)
     {
         //
     }
@@ -76,10 +76,10 @@ class WallLikeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\WallLike  $wallLike
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(WallLike $wallLike)
+    public function destroy(Unit $unit)
     {
         //
     }

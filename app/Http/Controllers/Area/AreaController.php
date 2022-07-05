@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Area;
 
-use App\Http\Requests\StoreResidentRequest;
-use App\Http\Requests\UpdateResidentRequest;
-use App\Models\Resident;
+use App\Http\Requests\StoreAreaRequest;
+use App\Http\Requests\UpdateAreaRequest;
+use App\Models\Area;
 
-class ResidentController extends Controller
+class AreaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class ResidentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreResidentRequest  $request
+     * @param  \App\Http\Requests\StoreAreaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreResidentRequest $request)
+    public function store(StoreAreaRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class ResidentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Resident  $resident
+     * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function show(Resident $resident)
+    public function show(Area $area)
     {
         //
     }
@@ -53,10 +53,10 @@ class ResidentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Resident  $resident
+     * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resident $resident)
+    public function edit(Area $area)
     {
         //
     }
@@ -64,11 +64,11 @@ class ResidentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateResidentRequest  $request
-     * @param  \App\Models\Resident  $resident
+     * @param  \App\Http\Requests\UpdateAreaRequest  $request
+     * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateResidentRequest $request, Resident $resident)
+    public function update(UpdateAreaRequest $request, Area $area)
     {
         //
     }
@@ -76,10 +76,10 @@ class ResidentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Resident  $resident
+     * @param  \App\Models\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resident $resident)
+    public function destroy(Area $area)
     {
         //
     }
