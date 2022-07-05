@@ -10,6 +10,15 @@ class Vehicle extends Model
     use HasFactory;
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'unit_id',
+    ];
+
+    /**
      * Get the unit that owns the vehicle.
      */
     public function unit()

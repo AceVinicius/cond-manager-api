@@ -10,6 +10,15 @@ class AreaDisabledDay extends Model
     use HasFactory;
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'unit_id',
+    ];
+
+    /**
      * Get the area that owns the Area disabled day.
      */
     public function unit()

@@ -10,6 +10,15 @@ class Unit extends Model
     use HasFactory;
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'user_id',
+    ];
+
+    /**
      * Get the billets for the unit.
      */
     public function billets()

@@ -10,6 +10,16 @@ class Reservation extends Model
     use HasFactory;
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'area_id',
+        'unit_id',
+    ];
+
+    /**
      * Get the area that owns the reservation.
      */
     public function area()

@@ -10,6 +10,16 @@ class WallLike extends Model
     use HasFactory;
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'user_id',
+        'wall_id',
+    ];
+
+    /**
      * Get the user that owns the wall like.
      */
     public function user()
