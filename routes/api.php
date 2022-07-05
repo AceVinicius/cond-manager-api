@@ -30,5 +30,4 @@ Route::prefix('auth')->group(function () {
     Route::post('logout', LogoutController::class);
 });
 
-Route::post('users', [UserController::class, 'store'])->name('users.store');
-// Route::apiResource('users', UserController::class);
+Route::apiResource('users', UserController::class);
