@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\UnauthorizedController;
+use App\Http\Controllers\Cond\UserController;
 use App\Http\Controllers\PingController;
 
 use App\Models\User;
@@ -21,12 +22,13 @@ use App\Models\User;
 |
 */
 
-Route::get('/ping', PingController::class);
+Route::get('ping', PingController::class);
 
-Route::post('/register', RegisterController::class);
-Route::post('/login', LoginController::class);
-Route::post('/logout', LogoutController::class)->middleware('auth:sanctum');
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('auth')->group(function () {
+    Route::get('unauthorized', UnauthorizedController::class)->name('login');
+    Route::post('login', LoginController::class);
+    Route::post('logout', LogoutController::class);
 });
+
+Route::post('users', [UserController::class, 'store'])->name('users.store');
+// Route::apiResource('users', UserController::class);
