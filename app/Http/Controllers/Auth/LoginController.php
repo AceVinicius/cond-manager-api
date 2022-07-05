@@ -45,7 +45,7 @@ class LoginController extends Controller
         }
 
         $response = [
-            'message' => 'User logged in successfully.',
+            'message' => '',
             'token' => $user->createToken(time().rand(0,9999))->plainTextToken,
             'user' => [
                 'id' => $user->id,
