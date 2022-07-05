@@ -25,6 +25,10 @@ class LogoutController extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        $request->user()->tokens()->delete();
+
+        $response = ['message' => 'User logged out.'];
+
+        return response()->json($response, 204);
     }
 }
