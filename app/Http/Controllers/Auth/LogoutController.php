@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class LogoutController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
+
+    /**
      * Handle the incoming request.
      *
      * @param  \Illuminate\Http\Request  $request

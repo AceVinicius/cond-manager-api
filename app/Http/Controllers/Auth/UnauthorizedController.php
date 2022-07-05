@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class UnauthorizedController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -20,11 +20,14 @@ class LoginController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        //
+        $response = [
+            'message' => 'Unauthorized.',
+        ];
+
+        return response()->json($response, 401);
     }
 }
