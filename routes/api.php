@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\UnauthorizedController;
+use App\Http\Controllers\Auth\ValidateController;
 use App\Http\Controllers\Cond\UserController;
 use App\Http\Controllers\PingController;
 
@@ -26,6 +26,7 @@ Route::prefix('auth')->group(function () {
     Route::get('unauthorized', UnauthorizedController::class)->name('login');
     Route::post('login', LoginController::class);
     Route::post('logout', LogoutController::class);
+    Route::post('validate', ValidateController::class);
 });
 
 Route::apiResource('users', UserController::class);

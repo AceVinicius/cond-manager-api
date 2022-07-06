@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AuthService
@@ -18,10 +17,22 @@ class AuthService
             return ['message' => 'Invalid credentials.'];
         }
 
-        $user = User::where('cpf', $cpf)->first();
+        return AuthService::authenticatedUser();
+    }
+
+    public static function logout($user)
+    {
+        $user->tokens()->delete();
+
+        return ['message' => ''];
+    }
+
+    public static function authenticatedUser()
+    {
+        $user = Auth::user();
 
         if (! $user) {
-            return ['message' => 'Error finding user.'];
+            return ['message' => 'User not found.'];
         }
 
         return [
@@ -37,12 +48,5 @@ class AuthService
                 'properties' => $user->units(),
             ],
         ];
-    }
-
-    public static function logout($user)
-    {
-        $user->tokens()->delete();
-
-        return ['message' => ''];
     }
 }
