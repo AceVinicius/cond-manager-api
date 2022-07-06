@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Services\AuthService;
 use Illuminate\Http\Request;
 
 class LogoutController extends Controller
@@ -25,9 +26,11 @@ class LogoutController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $request->user()->tokens()->delete();
+        $response = AuthService::logout($request->user());
 
-        $response = ['message' => ''];
+        if ($response['message']) {
+            return response()->json($response, 500);
+        }
 
         return response()->json($response, 200);
     }

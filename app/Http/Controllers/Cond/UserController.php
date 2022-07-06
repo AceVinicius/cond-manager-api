@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Services\AuthService;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -40,10 +40,10 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $validated = $request->validated();
-        $credentials = [
-            'cpf' => $validated['cpf'],
-            'password' => $validated['password'],
-        ];
+
+        $cpf = $validated['cpf'];
+        $password = $validated['password'];
+
         $validated['password'] = Hash::make($validated['password']);
 
         $user = User::create($validated);
@@ -53,24 +53,13 @@ class UserController extends Controller
             return response()->json($response, 500);
         }
 
-        if (! Auth::attempt($credentials)) {
-            $response = ['message' => 'User could not be automatically logged in.'];
+        $response = AuthService::login($cpf, $password);
+
+        if ($response['message']) {
+            $response = ['message' => 'User could not be created.'];
+            $user->delete();
             return response()->json($response, 500);
         }
-
-        $response = [
-            'message' => '',
-            'token' => $user->createToken(time().rand(0,9999))->plainTextToken,
-            'user' => [
-                'id' => $user->id,
-                'name' => $user->name,
-                'email' => $user->email,
-                'cpf' => $user->cpf,
-                'created_at' => $user->created_at,
-                'updated_at' => $user->updated_at,
-                'properties' => $user->units(),
-            ],
-        ];
 
         return response()->json($response, 201);
     }
