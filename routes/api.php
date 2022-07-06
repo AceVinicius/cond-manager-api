@@ -9,8 +9,6 @@ use App\Http\Controllers\Auth\UnauthorizedController;
 use App\Http\Controllers\Cond\UserController;
 use App\Http\Controllers\PingController;
 
-use App\Models\User;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
