@@ -26,10 +26,7 @@ class LoginController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $cpf = $request['cpf'];
-        $password = $request['password'];
-
-        $response = AuthService::login($cpf, $password);
+        $response = AuthService::login($request['cpf'], $request['password']);
 
         if ($response['message']) {
             return response()->json($response, 401);

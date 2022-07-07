@@ -41,19 +41,19 @@ class UserController extends Controller
     {
         $validated = $request->validated();
 
-        $cpf = $validated['cpf'];
-        $password = $validated['password'];
-
-        $validated['password'] = Hash::make($validated['password']);
-
-        $user = User::create($validated);
+        $user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'cpf' => $validated['cpf'],
+            'password' => Hash::make($validated['password']),
+        ]);
 
         if (! $user) {
             $response = ['message' => 'User could not be created.'];
             return response()->json($response, 500);
         }
 
-        $response = AuthService::login($cpf, $password);
+        $response = AuthService::login($validated['cpf'], $validated['password']);
 
         if ($response['message']) {
             $response = ['message' => 'User could not be created.'];
