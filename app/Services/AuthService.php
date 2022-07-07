@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Auth;
 class AuthService
 {
     /**
+     * This variable decides if the token will be generated.
+     */
+    private static $isloggingIn = false;
+
+    /**
      * Login current user.
      *
      * @param  string  $cpf
@@ -23,6 +28,8 @@ class AuthService
         if (! Auth::attempt($credentials)) {
             return ['message' => 'Invalid credentials.'];
         }
+
+        self::$isloggingIn = true;
 
         return AuthService::authenticatedUser();
     }
@@ -53,9 +60,8 @@ class AuthService
             return ['message' => 'User not found.'];
         }
 
-        return [
+        $array = [
             'message' => '',
-            'token' => $user->createToken(time().rand(0,9999))->plainTextToken,
             'user' => [
                 'id' => $user->id,
                 'name' => $user->name,
@@ -66,5 +72,11 @@ class AuthService
                 'properties' => $user->units(),
             ],
         ];
+
+        if (self::$isloggingIn) {
+            $array['token'] = $user->createToken(time().rand(0,9999))->plainTextToken;
+        }
+
+        return $array;
     }
 }
