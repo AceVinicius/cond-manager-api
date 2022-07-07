@@ -6,6 +6,13 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthService
 {
+    /**
+     * Login current user.
+     *
+     * @param  string  $cpf
+     * @param  string  $password
+     * @return array
+     */
     public static function login($cpf, $password)
     {
         $credentials = [
@@ -20,6 +27,12 @@ class AuthService
         return AuthService::authenticatedUser();
     }
 
+    /**
+     * Logout current user.
+     *
+     * @param  App\Models\User  $user
+     * @return array
+     */
     public static function logout($user)
     {
         $user->tokens()->delete();
@@ -27,6 +40,11 @@ class AuthService
         return ['message' => ''];
     }
 
+    /**
+     * Get authenticated user.
+     *
+     * @return array
+     */
     public static function authenticatedUser()
     {
         $user = Auth::user();
