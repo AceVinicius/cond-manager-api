@@ -10,6 +10,16 @@ class Wall extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'title',
+        'body',
+    ];
+
+    /**
      * Get the wall likes for the wall.
      */
     public function wallLikes()

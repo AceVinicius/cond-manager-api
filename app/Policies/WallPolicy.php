@@ -18,7 +18,7 @@ class WallPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class WallPolicy
      */
     public function view(User $user, Wall $wall)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class WallPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
