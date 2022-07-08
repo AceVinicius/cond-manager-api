@@ -19,6 +19,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth:sanctum')->except('store');
+        $this->authorizeResource(User::class, 'user');
     }
 
     /**
