@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\UnauthorizedController;
 use App\Http\Controllers\Auth\ValidateController;
 use App\Http\Controllers\Cond\UserController;
 use App\Http\Controllers\Cond\WallController;
+use App\Http\Controllers\Cond\WallLikeController;
 use App\Http\Controllers\PingController;
 
 /*
@@ -32,3 +33,4 @@ Route::prefix('auth')->group(function () {
 
 Route::apiResource('users', UserController::class);
 Route::apiResource('walls', WallController::class);
+Route::post('walls/{wall}/like', WallLikeController::class);

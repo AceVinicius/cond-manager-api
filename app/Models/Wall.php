@@ -26,4 +26,12 @@ class Wall extends Model
     {
         return $this->hasMany(wallLike::class);
     }
+
+    /**
+     * Get the wall likes for the user.
+     */
+    public function likesFrom($user_id)
+    {
+        return $this->wallLikes()->where('user_id', $user_id)->first();
+    }
 }

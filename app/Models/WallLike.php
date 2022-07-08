@@ -10,11 +10,11 @@ class WallLike extends Model
     use HasFactory;
 
     /**
-     * The attributes that should be hidden for serialization.
+     * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $hidden = [
+    protected $fillable = [
         'user_id',
         'wall_id',
     ];
