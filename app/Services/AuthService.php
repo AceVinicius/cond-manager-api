@@ -69,7 +69,7 @@ class AuthService
                 'cpf' => $user->cpf,
                 'created_at' => $user->created_at,
                 'updated_at' => $user->updated_at,
-                'properties' => $user->units(),
+                'properties' => $user->units()->get(),
             ],
         ];
 
