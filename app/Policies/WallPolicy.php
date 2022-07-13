@@ -65,7 +65,7 @@ class WallPolicy
      */
     public function delete(User $user, Wall $wall)
     {
-        //
+        return true;
     }
 
     /**

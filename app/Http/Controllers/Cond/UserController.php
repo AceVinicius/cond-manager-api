@@ -96,6 +96,13 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        if (! $user->delete()) {
+            $response = ['message' => 'Wall could not be deleted.'];
+            return response()->json($response, 500);
+        }
+
+        $response = ['message' => ''];
+
+        return response()->json($response, 200);
     }
 }

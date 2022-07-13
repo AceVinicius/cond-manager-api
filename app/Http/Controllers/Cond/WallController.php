@@ -104,6 +104,13 @@ class WallController extends Controller
      */
     public function destroy(Wall $wall)
     {
-        //
+        if (! $wall->delete()) {
+            $response = ['message' => 'Wall could not be deleted.'];
+            return response()->json($response, 500);
+        }
+
+        $response = ['message' => ''];
+
+        return response()->json($response, 200);
     }
 }
