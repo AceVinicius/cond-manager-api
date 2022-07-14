@@ -24,7 +24,7 @@ class Wall extends Model
      */
     public function wallLikes()
     {
-        return $this->hasMany(wallLike::class);
+        return $this->hasMany(WallLike::class);
     }
 
     /**

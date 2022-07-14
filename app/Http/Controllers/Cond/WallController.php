@@ -35,11 +35,7 @@ class WallController extends Controller
         foreach ($walls as $key => $value) {
             $userLiked = $value->wallLikes()->where('user_id', Auth::id())->first();
 
-            if ($userLiked) {
-                $walls[$key]->user_liked = true;
-            } else {
-                $walls[$key]->user_liked = false;
-            }
+            $walls[$key]->user_liked = $userLiked ? true : false;
         }
 
         $response = [
