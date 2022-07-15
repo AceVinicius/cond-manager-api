@@ -3,39 +3,62 @@
 namespace App\Http\Controllers\Unit;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreBilletsRequest;
-use App\Http\Requests\UpdateBilletsRequest;
-use App\Models\Billets;
+use App\Http\Requests\StoreBilletRequest;
+use App\Http\Requests\UpdateBilletRequest;
+use App\Models\Billet;
+use App\Models\Unit;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
-class BilletsController extends Controller
+class BilletController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+        // $this->authorizeResource(Billet::class, 'unit,billet');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Unit $unit)
     {
-        //
-    }
+        if (Auth::id() !== $unit->user_id) {
+            $response = [
+                'message' => 'Unauthorized',
+            ];
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+            return response()->json($response, 403);
+        }
+
+        $billets = $unit->billets()->get();
+
+        foreach ($billets as $key => $value) {
+            $billets[$key]['file_url'] = asset('storage/'. $value['file_url']);
+        }
+
+        $response = [
+            'message' => '',
+            'billets' => $billets,
+        ];
+
+        return response()->json($response, 200);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBilletsRequest  $request
+     * @param  \App\Http\Requests\StoreBilletRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBilletsRequest $request)
+    public function store(StoreBilletRequest $request, Unit $unit)
     {
         //
     }
@@ -43,21 +66,10 @@ class BilletsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Billets  $billets
+     * @param  \App\Models\Billet  $billet
      * @return \Illuminate\Http\Response
      */
-    public function show(Billets $billets)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Billets  $billets
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Billets $billets)
+    public function show(Billet $billet, Unit $unit)
     {
         //
     }
@@ -65,11 +77,11 @@ class BilletsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBilletsRequest  $request
-     * @param  \App\Models\Billets  $billets
+     * @param  \App\Http\Requests\UpdateBilletRequest  $request
+     * @param  \App\Models\Billet  $billet
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBilletsRequest $request, Billets $billets)
+    public function update(UpdateBilletRequest $request, Unit $unit, Billet $billet)
     {
         //
     }
@@ -77,10 +89,10 @@ class BilletsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Billets  $billets
+     * @param  \App\Models\Billet  $billet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Billets $billets)
+    public function destroy(Unit $unit, Billet $billet)
     {
         //
     }

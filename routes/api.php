@@ -11,6 +11,7 @@ use App\Http\Controllers\Cond\UserController;
 use App\Http\Controllers\Cond\WallController;
 use App\Http\Controllers\Cond\WallLikeController;
 use App\Http\Controllers\PingController;
+use App\Http\Controllers\Unit\BilletController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,5 @@ Route::prefix('auth')->group(function () {
 Route::apiResource('documents', DocumentController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('walls', WallController::class);
+Route::apiResource('units.billets', BilletController::class);
 Route::post('walls/{wall}/like', WallLikeController::class);

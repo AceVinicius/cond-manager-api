@@ -2,11 +2,12 @@
 
 namespace App\Policies;
 
-use App\Models\Billets;
+use App\Models\Billet;
+use App\Models\Unit;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class BilletsPolicy
+class BilletPolicy
 {
     use HandlesAuthorization;
 
@@ -28,7 +29,7 @@ class BilletsPolicy
      * @param  \App\Models\Billets  $billets
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Billets $billets)
+    public function view(User $user, Billet $billet)
     {
         //
     }
@@ -51,7 +52,7 @@ class BilletsPolicy
      * @param  \App\Models\Billets  $billets
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Billets $billets)
+    public function update(User $user, Billet $billet)
     {
         //
     }
@@ -63,7 +64,7 @@ class BilletsPolicy
      * @param  \App\Models\Billets  $billets
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Billets $billets)
+    public function delete(User $user, Billet $billet)
     {
         //
     }
@@ -75,7 +76,7 @@ class BilletsPolicy
      * @param  \App\Models\Billets  $billets
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Billets $billets)
+    public function restore(User $user, Billet $billet)
     {
         //
     }
@@ -87,7 +88,7 @@ class BilletsPolicy
      * @param  \App\Models\Billets  $billets
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Billets $billets)
+    public function forceDelete(User $user, Billet $billet)
     {
         //
     }
