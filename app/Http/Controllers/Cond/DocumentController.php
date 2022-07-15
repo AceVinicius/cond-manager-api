@@ -3,12 +3,24 @@
 namespace App\Http\Controllers\Cond;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreDocumentsRequest;
-use App\Http\Requests\UpdateDocumentsRequest;
-use App\Models\Documents;
+use App\Http\Requests\StoreDocumentRequest;
+use App\Http\Requests\UpdateDocumentRequest;
+use App\Models\Document;
+use Illuminate\Support\Facades\Storage;
 
-class DocumentsController extends Controller
+class DocumentController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+        $this->authorizeResource(Document::class, 'document');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,17 +28,17 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $response = ['message' => ''];
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $documents = Document::all();
+
+        foreach ($documents as $key => $value) {
+            $documents[$key]['fileurl'] = asset('storage/'.$value['fileurl']);
+        }
+
+        $response['documents'] = $documents;
+
+        return response()->json($response, 200);
     }
 
     /**
@@ -35,7 +47,7 @@ class DocumentsController extends Controller
      * @param  \App\Http\Requests\StoreDocumentsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDocumentsRequest $request)
+    public function store(StoreDocumentRequest $request)
     {
         //
     }
@@ -46,18 +58,7 @@ class DocumentsController extends Controller
      * @param  \App\Models\Documents  $documents
      * @return \Illuminate\Http\Response
      */
-    public function show(Documents $documents)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Documents  $documents
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Documents $documents)
+    public function show(Document $document)
     {
         //
     }
@@ -69,7 +70,7 @@ class DocumentsController extends Controller
      * @param  \App\Models\Documents  $documents
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDocumentsRequest $request, Documents $documents)
+    public function update(UpdateDocumentRequest $request, Document $document)
     {
         //
     }
@@ -80,7 +81,7 @@ class DocumentsController extends Controller
      * @param  \App\Models\Documents  $documents
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Documents $documents)
+    public function destroy(Document $document)
     {
         //
     }

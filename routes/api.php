@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\UnauthorizedController;
 use App\Http\Controllers\Auth\ValidateController;
+use App\Http\Controllers\Cond\DocumentController;
 use App\Http\Controllers\Cond\UserController;
 use App\Http\Controllers\Cond\WallController;
 use App\Http\Controllers\Cond\WallLikeController;
@@ -31,6 +32,7 @@ Route::prefix('auth')->group(function () {
     Route::post('validate', ValidateController::class);
 });
 
+Route::apiResource('documents', DocumentController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('walls', WallController::class);
 Route::post('walls/{wall}/like', WallLikeController::class);
