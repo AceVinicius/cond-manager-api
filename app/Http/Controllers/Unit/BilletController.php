@@ -8,7 +8,6 @@ use App\Http\Requests\UpdateBilletRequest;
 use App\Models\Billet;
 use App\Models\Unit;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
 class BilletController extends Controller
 {
@@ -41,7 +40,7 @@ class BilletController extends Controller
         $billets = $unit->billets()->get();
 
         foreach ($billets as $key => $value) {
-            $billets[$key]['file_url'] = asset('storage/'. $value['file_url']);
+            $billets[$key]['file_url'] = asset('files/'. $value['file_url']);
         }
 
         $response = [

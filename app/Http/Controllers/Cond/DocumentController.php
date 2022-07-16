@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDocumentRequest;
 use App\Http\Requests\UpdateDocumentRequest;
 use App\Models\Document;
-use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
@@ -33,7 +32,7 @@ class DocumentController extends Controller
         $documents = Document::all();
 
         foreach ($documents as $key => $value) {
-            $documents[$key]['fileurl'] = asset('storage/'.$value['fileurl']);
+            $documents[$key]['file_url'] = asset('files/'.$value['file_url']);
         }
 
         $response['documents'] = $documents;
