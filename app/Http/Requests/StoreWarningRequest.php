@@ -13,7 +13,7 @@ class StoreWarningRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class StoreWarningRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:2048',
+            'photos' => 'sometimes|required|array',
+            'photos.*' => 'required|url'
         ];
     }
 }

@@ -12,6 +12,7 @@ use App\Http\Controllers\Cond\WallController;
 use App\Http\Controllers\Cond\WallLikeController;
 use App\Http\Controllers\PingController;
 use App\Http\Controllers\Unit\BilletController;
+use App\Http\Controllers\Unit\WarningController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,6 @@ Route::apiResource('documents', DocumentController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('walls', WallController::class);
 Route::apiResource('units.billets', BilletController::class);
+Route::apiResource('units.warnings', WarningController::class);
 Route::post('walls/{wall}/like', WallLikeController::class);
+Route::post('warning/file', [WarningController::class, 'file']);
