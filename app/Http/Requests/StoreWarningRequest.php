@@ -26,7 +26,7 @@ class StoreWarningRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:2048',
-            'photos' => 'sometimes|required|array',
+            'photos' => 'sometimes|array',
             'photos.*' => 'required|url'
         ];
     }
