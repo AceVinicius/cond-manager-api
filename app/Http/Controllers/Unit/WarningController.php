@@ -51,7 +51,7 @@ class WarningController extends Controller
                     continue;
                 }
 
-                $$photoList[] = asset('storage/'.$photo);
+                $photoList[] = asset('storage/'.$photo, true);
             }
 
             $warnings[$key]['photos'] = $photoList;
@@ -161,7 +161,7 @@ class WarningController extends Controller
         $file = $request->file('photo')->store('public');
 
         $response = [
-            'photo'=> asset(Storage::url($file)),
+            'photo'=> asset(Storage::url($file), true),
         ];
 
 
