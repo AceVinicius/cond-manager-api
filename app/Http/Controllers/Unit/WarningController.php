@@ -86,7 +86,8 @@ class WarningController extends Controller
         $photos = [];
 
         foreach ($validated['photos'] as $photo) {
-            $photos = end(explode('/', $photo));
+            $url = explode('/', $photo);
+            $photos[] = end($url);
         }
 
         $warning = Warning::create([
@@ -102,7 +103,10 @@ class WarningController extends Controller
             return response()->json($response, 500);
         }
 
-        $response = [];
+        $response = [
+            'message' => '',
+            'warning' => $warning,
+        ];
 
         return response()->json($response, 201);
     }
