@@ -13,7 +13,7 @@ class StoreReservationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreReservationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => 'required|numeric|exists:areas,id',
+            'date' => 'required|date_format:Y-m-d',
+            'time' => 'required|date_format:H:i:s',
         ];
     }
 }

@@ -26,7 +26,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $days = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+        $days = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
         $response = ['message' => '', 'areas' => []];
 
         $areas = Area::where('is_active', 1)->get();
