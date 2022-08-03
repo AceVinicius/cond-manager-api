@@ -193,6 +193,14 @@ class ReservationController extends Controller
      */
     public function destroy(Unit $unit, Reservation $reservation)
     {
-        //
+        if (Auth::id() !== $unit->user_id) {
+            $response = [
+                'message' => 'Unauthorized',
+            ];
+
+            return response()->json($response, 403);
+        }
+
+        $reservation->delete();
     }
 }
