@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Area\AreaController;
+use App\Http\Controllers\Area\AreaDisabledDayController;
+use App\Http\Controllers\Area\ReservationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\UnauthorizedController;
@@ -40,6 +42,9 @@ Route::apiResource('documents', DocumentController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('walls', WallController::class);
 Route::apiResource('units.billets', BilletController::class);
+Route::apiResource('units.reservations', ReservationController::class);
 Route::apiResource('units.warnings', WarningController::class);
 Route::post('walls/{wall}/like', WallLikeController::class);
+Route::get('reservation/{area}/disabled-days', [AreaDisabledDayController::class, 'getDays']);
+Route::get('reservation/{area}/available-times', [AreaDisabledDayController::class, 'getTimes']);
 Route::post('warning/file', [WarningController::class, 'file']);
