@@ -16,7 +16,63 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $days = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+        $response = ['message' => '', 'areas' => []];
+
+        $areas = Area::where('is_active', 1)->get();
+
+        foreach ($areas as $area) {
+            $dayList = explode(',', $area['days']);
+
+            $daysGroup = [];
+
+            $lastDay = intval(array_shift($dayList));
+            $daysGroup[] = $days[$lastDay];
+            // array_shift($dayList);
+
+            foreach($dayList as $day) {
+                if (intval($day) != $lastDay + 1) {
+                    $daysGroup[] = $days[$lastDay];
+                    $daysGroup[] = $days[$day];
+                }
+
+                $lastDay = intval($day);
+            }
+
+            $daysGroup[] = $days[end($dayList)];
+
+            $dates = '';
+            $close = 0;
+
+            foreach($daysGroup as $group) {
+                if ($close) {
+                    $dates .= '-'.$group.',';
+                } else {
+                    $dates .= $group;
+                }
+
+                $close = 1 - $close;
+            }
+
+            $dates = explode(',', $dates);
+            array_pop($dates);
+
+            $start = date('H:i', strtotime($area['start_time']));
+            $end = date('H:i', strtotime($area['end_time']));
+
+            foreach($dates as $key => $value) {
+                $dates[$key] .= ' '.$start.' às '.$end;
+            }
+
+            $response['areas'][] = [
+                'id' => $area['id'],
+                'cover' => asset('storage/'.$area['cover']),
+                'title' => $area['title'],
+                'dates' => $dates,
+            ];
+        }
+
+        return response()->json($response, 200);
     }
 
     /**

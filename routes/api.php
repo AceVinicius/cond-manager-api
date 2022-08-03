@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Area\AreaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\UnauthorizedController;
@@ -34,6 +35,7 @@ Route::prefix('auth')->group(function () {
     Route::post('validate', ValidateController::class);
 });
 
+Route::apiResource('areas', AreaController::class);
 Route::apiResource('documents', DocumentController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('walls', WallController::class);
