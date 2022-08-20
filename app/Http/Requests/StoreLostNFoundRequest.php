@@ -24,7 +24,9 @@ class StoreLostNFoundRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'description' => 'required',
+            'where' => 'required',
+            'photo' => 'required|file|mimes:jpg,png',
         ];
     }
 }
